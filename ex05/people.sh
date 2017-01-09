@@ -1,1 +1,1 @@
-ldapsearch -Q "uid=z*" cn | grep cn:
+ldapsearch -Q "uid=z*" cn | grep cn: | sort -r
