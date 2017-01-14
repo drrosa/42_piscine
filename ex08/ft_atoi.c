@@ -6,7 +6,7 @@
 /*   By: drosa-ta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/13 22:30:47 by exam              #+#    #+#             */
-/*   Updated: 2017/01/13 22:49:38 by exam             ###   ########.fr       */
+/*   Updated: 2017/01/14 00:05:17 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int ft_atoi(const char *str)
@@ -33,6 +33,11 @@ int ft_atoi(const char *str)
 	while(i < size)
 	{
 		num = str[i] - 48;
+		if(num < 0 || num > 9)
+		{	
+			result = result / pos[n+1];
+			break;
+		}
 		result += num * pos[n];
 		i++;
 		n--;	
