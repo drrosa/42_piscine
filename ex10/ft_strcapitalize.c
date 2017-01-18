@@ -6,7 +6,7 @@
 /*   By: drosa-ta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/17 16:02:03 by drosa-ta          #+#    #+#             */
-/*   Updated: 2017/01/17 17:07:45 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/01/17 20:12:44 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_strcapitalize(char *str)
 			str[i] -= 32;
 			is_word = 0;
 		}
-		else if (is_upcase(str[i]) && is_word == 1)
+		else if (is_upcase(str[i]) && is_word != 1)
 		{
 			str[i] += 32;
 			is_word = 0;
