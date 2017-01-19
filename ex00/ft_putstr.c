@@ -6,11 +6,11 @@
 /*   By: drosa-ta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/16 10:03:47 by drosa-ta          #+#    #+#             */
-/*   Updated: 2017/01/16 12:32:25 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/01/18 20:27:07 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
+void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {

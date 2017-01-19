@@ -6,14 +6,13 @@
 /*   By: drosa-ta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 10:25:09 by drosa-ta          #+#    #+#             */
-/*   Updated: 2017/01/18 10:25:12 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/01/18 20:27:59 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (0);
 }
