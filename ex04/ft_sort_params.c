@@ -6,7 +6,7 @@
 /*   By: drosa-ta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 22:19:27 by drosa-ta          #+#    #+#             */
-/*   Updated: 2017/01/18 22:19:29 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/01/18 22:31:59 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ int		ft_strcmp(char *s1, char *s2)
 	i = 0;
 	while (s1[i] || s2[i])
 	{
-		if (s1[i] < s2[i])
-			return (-1);
-		if (s1[i] > s2[i])
-			return (1);
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 		i++;
 	}
 	return (0);
@@ -43,10 +41,7 @@ void	ft_putstr(char *str)
 
 	i = 0;
 	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+		ft_putchar(str[i++]);
 }
 
 int		main(int argc, char **argv)
