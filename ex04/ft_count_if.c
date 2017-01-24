@@ -6,11 +6,11 @@
 /*   By: drosa-ta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 17:08:48 by drosa-ta          #+#    #+#             */
-/*   Updated: 2017/01/23 17:10:52 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/01/24 14:35:33 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_any(char **tab, int (*f)(char*))
+int	ft_count_if(char **tab, int (*f)(char*))
 {
 	int i;
 	int count;
