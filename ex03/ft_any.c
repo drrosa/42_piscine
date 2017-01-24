@@ -6,7 +6,7 @@
 /*   By: drosa-ta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 16:56:21 by drosa-ta          #+#    #+#             */
-/*   Updated: 2017/01/23 17:00:08 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/01/23 17:07:25 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@ int	ft_any(char **tab, int (*f)(char*))
 	int i;
 
 	i = 0;
-	while(char[i])
+	while (tab[i])
 	{
-		if(f(char[i]) == 1)
+		if (f(tab[i]) == 1)
 			return (1);
 	}
 	return (0);
