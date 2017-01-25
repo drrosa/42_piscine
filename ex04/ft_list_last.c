@@ -6,9 +6,11 @@
 /*   By: drosa-ta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 20:21:56 by drosa-ta          #+#    #+#             */
-/*   Updated: 2017/01/24 20:41:02 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/01/25 15:16:40 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_list.h"
 
 t_list	*ft_list_last(t_list *begin_list)
 {
