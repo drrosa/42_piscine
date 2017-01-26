@@ -6,7 +6,7 @@
 /*   By: drosa-ta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 21:35:36 by drosa-ta          #+#    #+#             */
-/*   Updated: 2017/01/25 21:57:21 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/01/25 22:00:08 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_list_reverse(t_list **begin_list)
 	prev = NULL;
 	current = *begin_list;
 	next = NULL;
-	while (current->next)
+	while (current)
 	{
 		next = current->next;
 		current->next = prev;
