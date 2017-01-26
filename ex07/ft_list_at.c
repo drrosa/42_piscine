@@ -6,7 +6,7 @@
 /*   By: drosa-ta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 20:21:10 by drosa-ta          #+#    #+#             */
-/*   Updated: 2017/01/25 20:36:11 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/01/25 20:46:59 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 	unsigned int	i;
 	t_list			*node;
 
+	i = 0;
 	node = begin_list;
 	while (node->next && i < nbr)
 	{
