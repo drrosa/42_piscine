@@ -6,7 +6,7 @@
 /*   By: drosa-ta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 21:31:49 by drosa-ta          #+#    #+#             */
-/*   Updated: 2017/01/25 15:11:11 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/01/25 16:24:22 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ t_list	*ft_list_push_params(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
-		list = ft_create_elem(av[i]);
-		list->next = temp_node;
-		temp_node = list;
+		temp_node = ft_create_elem(av[i]);
+		list = temp_node;
+		temp_node->next = list;
 		i++;
 	}
 	return (list);
