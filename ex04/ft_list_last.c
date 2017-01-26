@@ -6,7 +6,7 @@
 /*   By: drosa-ta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 20:21:56 by drosa-ta          #+#    #+#             */
-/*   Updated: 2017/01/25 15:16:40 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/01/25 17:08:40 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 t_list	*ft_list_last(t_list *begin_list)
 {
-	t_list *next_node;
+	t_list *this_node;
 
-	next_node = begin_list;
-	while (next_node)
+	this_node = begin_list;
+	while (this_node->next)
 	{
-		next_node = next_node->next;
+		this_node = this_node->next;
 	}
-	return (next_node);
+	return (this_node);
 }
