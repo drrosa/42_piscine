@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 00:19:44 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/01/31 23:17:21 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/02/01 14:23:34 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,13 +88,13 @@ int		main(int argc, char **argv)
 	while (i < argc)
 	{
 		map = ft_file_to_str(argv[i]);
-		ft_putstr(map);
-		ft_putchar('\n');
+//		ft_putstr(map);
+//		ft_putchar('\n');
 		length = ft_length(map);
 		height = ft_height(map);
 		key = ft_get_key(map);
 
-		ft_putstr("Map in the array\n");
+//		ft_putstr("Map in the array\n");
 		d_arr = ft_get_arr(map);
 		if (!ft_validate_map(d_arr, key, length) || height <= 0 ||
 			ft_key_len(map) != height || ft_key_len(map) <= 0)
@@ -116,23 +116,23 @@ int		main(int argc, char **argv)
 			return (0);
 		}
 
-		ft_put_ch_arr(d_arr);
-		ft_putchar('\n');
+//		ft_put_ch_arr(d_arr);
+//		ft_putchar('\n');
 
-		ft_putstr("Map in the ints array\n");
+//		ft_putstr("Map in the ints array\n");
 		int_arr = ft_ch_to_int(d_arr, height, length, key[0]);
-		ft_put_int_arr(int_arr, length, height);
+//		ft_put_int_arr(int_arr, length, height);
 
-		ft_putstr("\nAlgorithm in action\n");
+//		ft_putstr("\nAlgorithm in action\n");
 		x_y = ft_algorithm(int_arr, height, length);
-		ft_put_int_arr(int_arr, length, height);
+//		ft_put_int_arr(int_arr, length, height);
 //		ft_putnbr(x_y[0]);
 //		ft_putchar(' ');
 //		ft_putnbr(x_y[1]);
 //		ft_putchar('\n');
 //		ft_putnbr(int_arr[x_y[0]][x_y[1]]);
 //
-		ft_putstr("\nBSQ\n");
+//		ft_putstr("\nBSQ\n");
 		ft_draw_square(d_arr, x_y, int_arr[x_y[0]][x_y[1]] - 1, key[2]);
 		ft_put_ch_arr(d_arr);
 		i++;
