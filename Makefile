@@ -6,7 +6,7 @@
 #    By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/31 00:43:52 by gguiulfo          #+#    #+#              #
-#    Updated: 2017/01/31 08:09:27 by gguiulfo         ###   ########.fr        #
+#    Updated: 2017/01/31 16:05:05 by drosa-ta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ SRC = ft_get_arr.c ft_putarr.c ft_open_file.c ft_ch_to_int.c ft_algorithm.c
 OBJ = *.o
 LIB = libbsq.a
 
-all: mklib exec
+all: $(NAME)
+
+$(NAME): mklib exec
 
 exec:
 	@gcc -Wall -Wextra -Werror libft.a $(LIB) main.c -o $(NAME)
@@ -26,9 +28,9 @@ mklib:
 	@ranlib $(LIB)
 
 clean:
-	@/bin/rm *.o
+	@/bin/rm -f *.o
 
 fclean: clean
-	@/bin/rm $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
