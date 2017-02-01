@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 01:26:13 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/01/31 06:03:04 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/01/31 23:09:45 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int		ft_length(char *str)
 
 	i = 0;
 	len = 0;
-	while (str[i] != '\n')
+	while (str[i] && str[i] != '\n')
 	{
 		i++;
 	}
 	i++;
-	while (str[i] != '\n')
+	while (str[i] && str[i] != '\n')
 	{
 		len++;
 		i++;
@@ -73,7 +73,7 @@ char	**ft_set_values(char *str, char **d_arr)
 	x = 0;
 	y = 0;
 	i = 0;
-	while (str[i] != '\n')
+	while (str[i] && str[i] != '\n')
 		i++;
 	i++;
 	while (str[i] != '\0')

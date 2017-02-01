@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 07:29:49 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/01/31 16:08:47 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/01/31 20:05:19 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,50 +34,43 @@ int		*ft_algorithm(int **arr, int height, int length)
 	int *max;
 	int tmp;
 
-	x = 1;
-	y = 1;
+	y = 0;
 	tmp = 0;
 	max = (int*)malloc(sizeof(int) * 2);
-	while (y < height)
+	while (++y < height)
 	{
-		if (x > length - 1)
-		{
-			if (y == height - 1)
-				break ;
-			y++;
-			x = 0;
-		}
-		if (arr[y][x] != 0)
-		{
-			arr[y][x] = ft_minimum(arr[y - 1][x - 1],
-					arr[y - 1][x], arr[y][x - 1]) + 1;
-			if (arr[y][x] > tmp)
+		x = 0;
+		while (++x < length)
+			if (arr[y][x] != 0)
 			{
-				tmp = arr[y][x];
-				max[0] = y;
-				max[1] = x;
+				arr[y][x] = ft_minimum(arr[y - 1][x - 1],
+					arr[y - 1][x], arr[y][x - 1]) + 1;
+				if (arr[y][x] > tmp)
+				{
+					tmp = arr[y][x];
+					max[0] = y;
+					max[1] = x;
+				}
 			}
-		}
-		x++;
 	}
 	return (max);
 }
 
-void	ft_draw_square(char **d_arr, int x_limit, int y_limit, int size)
+void	ft_draw_square(char **d_arr, int *limit, int size, char c)
 {
 	int x;
 	int y;
 
-	x = x_limit - size;
-	y = y_limit - size;
-	while (x <= x_limit)
+	x = limit[0] - size;
+	y = limit[1] - size;
+	while (x <= limit[0])
 	{
-		while (y <= y_limit)
+		while (y <= limit[1])
 		{
-			d_arr[x][y] = 'x';
+			d_arr[x][y] = c;
 			y++;
 		}
-		y = y_limit - size;
+		y = limit[1] - size;
 		x++;
 	}
 }

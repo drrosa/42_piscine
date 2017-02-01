@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 05:30:09 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/01/31 07:01:28 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/01/31 20:26:19 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,15 @@ int		**ft_alloc_intarr(int height, int length)
 	return (di_arr);
 }
 
-int		**ft_ch_to_int(char **ch_arr, int **int_arr, int height, int length)
+int		**ft_ch_to_int(char **ch_arr, int height, int length, char c)
 {
 	int x;
 	int y;
+	int **int_arr; 
 
 	x = 0;
 	y = 0;
+	int_arr = ft_alloc_intarr(height, length); 
 	while (y <= height)
 	{
 		if (x > length - 1)
@@ -45,17 +47,11 @@ int		**ft_ch_to_int(char **ch_arr, int **int_arr, int height, int length)
 			y++;
 			x = 0;
 		}
-		if (ch_arr[y][x] == '.')
+		if (ch_arr[y][x] == c)
 			int_arr[y][x] = 1;
 		else
 			int_arr[y][x] = 0;
 		x++;
 	}
 	return (int_arr);
-}
-
-int		**ft_rtn_int(char *str, char **ch_arr)
-{
-	return (ft_ch_to_int(ch_arr, ft_alloc_intarr(ft_height(str), ft_length(str)),
-			ft_height(str), ft_length(str)));
 }
