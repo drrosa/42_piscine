@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 07:29:49 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/01/31 20:05:19 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/02/01 16:35:37 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,14 @@ int		ft_minimum(int a, int b, int c)
 	return (smallest);
 }
 
-int		*ft_algorithm(int **arr, int height, int length)
+int		*ft_algorithm(int **arr, int height, int length, int *max)
 {
 	int x;
 	int y;
-	int *max;
 	int tmp;
 
 	y = 0;
 	tmp = 0;
-	max = (int*)malloc(sizeof(int) * 2);
 	while (++y < height)
 	{
 		x = 0;

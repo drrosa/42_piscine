@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 00:19:44 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/02/01 14:23:34 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/02/01 16:37:43 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int		main(int argc, char **argv)
 
 	i = 1;
 	x_y = (int*)malloc(sizeof(int) * 2);
+	x_y[0] = -1;
+	x_y[1] = -1;
 	while (i < argc)
 	{
 		map = ft_file_to_str(argv[i]);
@@ -124,7 +126,7 @@ int		main(int argc, char **argv)
 //		ft_put_int_arr(int_arr, length, height);
 
 //		ft_putstr("\nAlgorithm in action\n");
-		x_y = ft_algorithm(int_arr, height, length);
+		x_y = ft_algorithm(int_arr, height, length, x_y);
 //		ft_put_int_arr(int_arr, length, height);
 //		ft_putnbr(x_y[0]);
 //		ft_putchar(' ');
@@ -133,7 +135,8 @@ int		main(int argc, char **argv)
 //		ft_putnbr(int_arr[x_y[0]][x_y[1]]);
 //
 //		ft_putstr("\nBSQ\n");
-		ft_draw_square(d_arr, x_y, int_arr[x_y[0]][x_y[1]] - 1, key[2]);
+		if(x_y[0] != -1 && x_y[1] != -1)
+			ft_draw_square(d_arr, x_y, int_arr[x_y[0]][x_y[1]] - 1, key[2]);
 		ft_put_ch_arr(d_arr);
 		i++;
 	}
