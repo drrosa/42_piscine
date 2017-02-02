@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 00:07:50 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/02/01 20:07:37 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/02/01 21:46:32 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,22 @@ char	*ft_file_to_str(char *argv)
 	temp[i] = '\0';
 	close(fd);
 	return (temp);
+}
+
+void	ft_stdin_file(void)
+{
+	int		ret;
+	char	c;
+	int		fd;
+
+	fd = open("temp", O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+	if (fd == -1)
+		return ;
+	while ((ret = read(0, &c, 1)))
+	{
+		if (ret == -1)
+			break ;
+		write(fd, &c, 1);
+	}
+	close(fd);
 }
