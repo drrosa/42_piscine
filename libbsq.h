@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 01:18:34 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/02/01 16:38:07 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/02/01 17:07:06 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,9 @@ int		ft_height(char *str);
 int		*ft_algorithm(int **arr, int height, int length, int *max);
 void    ft_draw_square(char **d_arr, int *limit, int size, char c);
 int     ft_key_len(char *str);
+char    *ft_get_key(char *str);
+int     ft_validate_map(char **map, char *key, int length);
+void    ft_puterr(char *str);
+int     ft_valid_key(char *str);
 
 #endif

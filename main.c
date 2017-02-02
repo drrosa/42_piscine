@@ -6,71 +6,16 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 00:19:44 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/02/01 16:37:43 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/02/01 17:13:20 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "libbsq.h"
-#include "stdio.h"
 #include <stdlib.h>
-#include <unistd.h>
 
-char	*ft_get_key(char *str)
-{
-	char	*key;
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 3;
-	key = (char*)malloc(sizeof(key) * 4);
-	while (str[i] != '\n')
-		i++;
-	if(i == 0)
-		return (0);
-	key[j] = '\0';
-	while (j >= 0)
-	{
-		key[--j] = str[--i];
-	}
-	return (key);
-}
-
-int		ft_validate_map(char **map, char *key, int length)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	while (map[i])
-	{
-		while (map[i][j])
-		{
-			if (map[i][j] != key[0] && map[i][j] != key[1])
-				return (0);
-			j++;
-		}
-		if (j != length)
-			return (0);
-		j = 0;
-		i++;
-	}
-	return (1);
-}
-
-void    ft_puterr(char *str)
-{
-    int i;
-
-    i = 0;
-    while (str[i] != '\0')
-    {
-        write(2, &str[i], 1);
-        i++;
-    }
-}
+//REMOVE
+#include "stdio.h"
 
 int		main(int argc, char **argv)
 {
@@ -98,7 +43,7 @@ int		main(int argc, char **argv)
 
 //		ft_putstr("Map in the array\n");
 		d_arr = ft_get_arr(map);
-		if (!ft_validate_map(d_arr, key, length) || height <= 0 ||
+		if (ft_valid_key(map) || !ft_validate_map(d_arr, key, length) || height <= 0 ||
 			ft_key_len(map) != height || ft_key_len(map) <= 0)
 		{
 			ft_puterr("map error\n");
