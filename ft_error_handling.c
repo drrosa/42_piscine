@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 15:49:54 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/02/01 17:13:08 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/02/01 19:21:37 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,16 @@ int		ft_valid_key(char *str)
 
 	i = 0;
 	ch_count = 0;
-	while (str[i] >= '9' && str[i] <= '0' && str[i] != '\n')
+	while (str[i] <= '9' && str[i] >= '0' && str[i] != '\n')
 		i++;
 	while (str[i] != '\n')
 	{
 		ch_count++;
 		i++;
 	}
-	if (ch_count != 3)
+	i--;
+	if (ch_count != 3 || str[i] == str[i - 1] || str[i] == str[i - 2]
+			|| str[i - 1] == str[i - 2])
 		return (0);
 	else
 		return (1);
@@ -44,7 +46,7 @@ char	*ft_get_key(char *str)
 	key = (char*)malloc(sizeof(key) * 4);
 	while (str[i] != '\n')
 		i++;
-	if(i == 0)
+	if (i == 0)
 		return (0);
 	key[j] = '\0';
 	while (j >= 0)
@@ -77,14 +79,14 @@ int		ft_validate_map(char **map, char *key, int length)
 	return (1);
 }
 
-void    ft_puterr(char *str)
+void	ft_puterr(char *str)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (str[i] != '\0')
-    {
-        write(2, &str[i], 1);
-        i++;
-    }
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(2, &str[i], 1);
+		i++;
+	}
 }
