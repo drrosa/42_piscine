@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 00:07:50 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/02/01 21:03:26 by gguiulfo         ###   ########.fr       */
+/*   Updated: 2017/02/01 21:46:32 by gguiulfo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*ft_file_to_str(char *argv)
 	return (temp);
 }
 
-int		ft_stdin_file(void)
+void	ft_stdin_file(void)
 {
 	int		ret;
 	char	c;
@@ -71,7 +71,7 @@ int		ft_stdin_file(void)
 
 	fd = open("temp", O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
 	if (fd == -1)
-		return (0);
+		return ;
 	while ((ret = read(0, &c, 1)))
 	{
 		if (ret == -1)
@@ -79,5 +79,4 @@ int		ft_stdin_file(void)
 		write(fd, &c, 1);
 	}
 	close(fd);
-	return (fd);
 }
