@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 05:30:09 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/01/31 20:26:19 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/02/01 20:54:17 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int		**ft_ch_to_int(char **ch_arr, int height, int length, char c)
 {
 	int x;
 	int y;
-	int **int_arr; 
+	int **int_arr;
 
 	x = 0;
 	y = 0;
-	int_arr = ft_alloc_intarr(height, length); 
+	int_arr = ft_alloc_intarr(height, length);
 	while (y <= height)
 	{
 		if (x > length - 1)
