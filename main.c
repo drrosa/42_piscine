@@ -6,7 +6,7 @@
 /*   By: gguiulfo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 00:19:44 by gguiulfo          #+#    #+#             */
-/*   Updated: 2017/02/01 17:13:20 by drosa-ta         ###   ########.fr       */
+/*   Updated: 2017/02/01 20:07:20 by drosa-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,21 @@ int		main(int argc, char **argv)
 	while (i < argc)
 	{
 		map = ft_file_to_str(argv[i]);
+		if (!map)
+		{
+			ft_puterr("map error\n");
+		}
+		else
+		{
+		
 //		ft_putstr(map);
 //		ft_putchar('\n');
 		length = ft_length(map);
 		height = ft_height(map);
 		key = ft_get_key(map);
-
 //		ft_putstr("Map in the array\n");
 		d_arr = ft_get_arr(map);
-		if (ft_valid_key(map) || !ft_validate_map(d_arr, key, length) || height <= 0 ||
+		if (!ft_valid_key(map) || !ft_validate_map(d_arr, key, length) || height <= 0 ||
 			ft_key_len(map) != height || ft_key_len(map) <= 0)
 		{
 			ft_puterr("map error\n");
@@ -83,6 +89,7 @@ int		main(int argc, char **argv)
 		if(x_y[0] != -1 && x_y[1] != -1)
 			ft_draw_square(d_arr, x_y, int_arr[x_y[0]][x_y[1]] - 1, key[2]);
 		ft_put_ch_arr(d_arr);
+		}
 		i++;
 	}
 	return (0);
