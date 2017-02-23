@@ -1,0 +1,6 @@
+Credentials cache: API:23626
+        Principal: drosa-ta@42.US.ORG
+
+  Issued                Expires               Principal
+Jan 10 14:25:18 2017  Jan 11 00:25:18 2017  krbtgt/42.US.ORG@42.US.ORG
+Jan 10 14:25:20 2017  Jan 11 00:25:18 2017  ldap/ldap-proxy.42.us.org@42.US.ORG
